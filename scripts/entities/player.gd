@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
 @export var playerStats: PlayerStats
+@export var enableMovement: bool = true
 
 func _ready() -> void:
-	#Makes a copy of the resource file PlayerStats - so each player can have there own stats
+	# Makes a copy of the resource file PlayerStats 
+	# so each player can have their own unique stats instance
 	playerStats = playerStats.duplicate()
 
 func _physics_process(_delta: float) -> void:
-	playerMovement()
+	# Only handle movement if movement is enabled
+	# (useful for menus, cutscenes, stun effects, etc.)
+	if enableMovement:
+		playerMovement()
 
 func playerMovement() -> void:
 	var inputVector: Vector2 = Vector2.ZERO
@@ -26,5 +31,8 @@ func playerMovement() -> void:
 	if inputVector != Vector2.ZERO:
 		inputVector = inputVector.normalized()
 
+	# Apply movement speed from PlayerStats
 	velocity = inputVector * playerStats.speed
+
+	# Use move_and_slide for smooth top-down character movement
 	move_and_slide()
