@@ -34,10 +34,6 @@ func set_health(new_health: float) -> void:
 	health = min(max_value, new_health)
 	value = health
 
-	if health <= 0:
-		queue_free()
-		return
-
 	if health < prev_health:
 		timer.start()
 	else:

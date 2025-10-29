@@ -20,12 +20,12 @@ func _physics_process(_delta: float) -> void:
 	
 	# Below used for debugging health bar updates
 	if Input.is_action_just_pressed("left_click"):
-		health_bar.health = player_stats.current_health - 10
-		player_stats.current_health = health_bar.health
+		player_stats.take_damage(10)
+		health_bar.health = player_stats.current_health
 		print(player_stats.current_health)
 	if Input.is_action_just_pressed("right_click"):
-		health_bar.health = player_stats.current_health + 10
-		player_stats.current_health = health_bar.health
+		player_stats.heal(10)
+		health_bar.health = player_stats.current_health
 		print(player_stats.current_health)
 
 func playerMovement() -> void:

@@ -13,8 +13,6 @@ func _init() -> void:
 
 func take_damage(amount: float) -> void:
 	current_health = clamp(current_health - amount, 0, max_health)
-	emit_signal("health_changed", current_health, max_health)
 
 func heal(amount: float) -> void:
 	current_health = clamp(current_health + amount, 0, max_health)
-	emit_signal("health_changed", current_health, max_health)
