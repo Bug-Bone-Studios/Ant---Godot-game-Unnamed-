@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bewps0p6srdrx"]
+[gd_scene load_steps=6 format=3 uid="uid://bewps0p6srdrx"]
 
 [ext_resource type="Script" uid="uid://b05ho7v4mepuu" path="res://scripts/entities/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_ucweq"]
-[ext_resource type="Resource" uid="uid://d2d4adovnmyj4" path="res://resource files/ent - tiddies/PlayerStats.tres" id="2_1ie0h"]
+[ext_resource type="Resource" uid="uid://d2d4adovnmyj4" path="res://resource files/ent - tiddies/player_stats.tres" id="2_42nxq"]
+[ext_resource type="PackedScene" uid="uid://hm5kr5gbcrg" path="res://components/HealthBarComponent.tscn" id="4_42nxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
 size = Vector2(128, 128)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_08t41")
-playerStats = ExtResource("2_1ie0h")
+player_stats = ExtResource("2_42nxq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_08t41")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ucweq")
+
+[node name="HealthBarComponent" parent="." instance=ExtResource("4_42nxq")]
+offset_left = -80.0
+offset_top = -89.0
+offset_right = 80.0
+offset_bottom = -66.0
