@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var player_stats: PlayerStats
 @export var enable_movement: bool = true
-@onready var health_bar: HealthBar = $HealthBarComponent
+@onready var health_bar: HealthBar = $health_bar_component
 
 func _ready() -> void:
 	# Makes a copy of the resource file PlayerStats 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://hm5kr5gbcrg"]
 
-[ext_resource type="Script" uid="uid://cmhflriowlhtj" path="res://components/HealthBarComponent.gd" id="1_6b5sm"]
+[ext_resource type="Script" uid="uid://cmhflriowlhtj" path="res://components/health_ bar_component.gd" id="1_26y1n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jb4n7"]
 
@@ -19,14 +19,14 @@ shadow_offset = Vector2(0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ygao"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="HealthBarComponent" type="ProgressBar"]
+[node name="health_bar_component" type="ProgressBar"]
 z_index = 1
 offset_right = 240.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_jb4n7")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o4j1l")
 value = 60.0
-script = ExtResource("1_6b5sm")
+script = ExtResource("1_26y1n")
 
 [node name="damage_bar" type="ProgressBar" parent="."]
 z_index = -1

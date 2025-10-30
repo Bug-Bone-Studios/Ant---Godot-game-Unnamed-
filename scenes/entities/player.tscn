@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b05ho7v4mepuu" path="res://scripts/entities/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_ucweq"]
 [ext_resource type="Resource" uid="uid://d2d4adovnmyj4" path="res://resource files/ent - tiddies/player_stats.tres" id="2_42nxq"]
-[ext_resource type="PackedScene" uid="uid://hm5kr5gbcrg" path="res://components/HealthBarComponent.tscn" id="4_42nxq"]
+[ext_resource type="PackedScene" uid="uid://hm5kr5gbcrg" path="res://components/health_bar_component.tscn" id="4_42nxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
 size = Vector2(128, 128)
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_08t41")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ucweq")
 
-[node name="HealthBarComponent" parent="." instance=ExtResource("4_42nxq")]
+[node name="health_bar_component" parent="." instance=ExtResource("4_42nxq")]
 offset_left = -80.0
 offset_top = -89.0
 offset_right = 80.0
