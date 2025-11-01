@@ -14,3 +14,4 @@ metadata/_custom_type_script = "uid://crrmp2hsdb52s"
 [node name="player" parent="." instance=ExtResource("1_6e51n")]
 position = Vector2(572, 291)
 player_stats = SubResource("Resource_sqeqr")
+enable_movement = null

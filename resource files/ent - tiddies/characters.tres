@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Characters" load_steps=2 format=3 uid="uid://dfmt6nnvmmis8"]
+
+[ext_resource type="Script" uid="uid://crrmp2hsdb52s" path="res://resource files/ent - tiddies/scripts/characters.gd" id="1_v126n"]
+
+[resource]
+script = ExtResource("1_v126n")
+metadata/_custom_type_script = "uid://crrmp2hsdb52s"
