@@ -1,2 +1,0 @@
-extends Entities
-class_name PlayerStats

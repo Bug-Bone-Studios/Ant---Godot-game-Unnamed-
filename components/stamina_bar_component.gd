@@ -1,7 +1,7 @@
 extends ProgressBar
-class_name HealthBar
+class_name StaminaBar
 
-@onready var health_bar_component: HealthBar = $"."
+@onready var stamina_bar: StaminaBar = $"."
 var stats = null
 
 func _ready() -> void:
@@ -16,10 +16,10 @@ func _bind_stats() -> void:
 		elif "enemy_stats" in p:
 			stats = p.enemy_stats
 	if stats:
-		max_value = stats.current_health
-		value = stats.current_health
+		max_value = stats.max_stamina
+		value = stats.current_stamina
 	else:
-		push_warning("HealthBar: no stats found on parent")
+		push_warning("StaminaBar: no stats found on parent")
 		
 func _process(_delta: float) -> void:
-	health_bar_component.value = stats.current_health
+	stamina_bar.value = stats.current_stamina
