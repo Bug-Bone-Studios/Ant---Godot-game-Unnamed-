@@ -25,6 +25,11 @@ folder_colors={
 "res://scripts/": "green"
 }
 
+[global_group]
+
+player="players"
+weapon=""
+
 [input]
 
 move_up={

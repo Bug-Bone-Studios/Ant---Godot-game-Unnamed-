@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player_stats: Entities
+@export var player_stats: Characters
 @export var enable_movement: bool = true
 @onready var stamina_regen_timer: Timer = $stamina_bar_component/stamina_regen_timer
 

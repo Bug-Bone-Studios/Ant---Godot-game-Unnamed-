@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8vn3d3hfp7oa"]
+[gd_scene load_steps=6 format=3 uid="uid://8vn3d3hfp7oa"]
 
 [ext_resource type="PackedScene" uid="uid://bewps0p6srdrx" path="res://scenes/entities/player.tscn" id="1_6e51n"]
 [ext_resource type="Script" uid="uid://crrmp2hsdb52s" path="res://resource files/ent - tiddies/scripts/characters.gd" id="2_mnksr"]
+[ext_resource type="PackedScene" uid="uid://uxgrk651mjqd" path="res://scenes/entities/enemy.tscn" id="3_sqeqr"]
+[ext_resource type="PackedScene" uid="uid://bm6eiigcohdhi" path="res://scenes/items/health_potion.tscn" id="4_jwygn"]
 
 [sub_resource type="Resource" id="Resource_sqeqr"]
 script = ExtResource("2_mnksr")
@@ -14,3 +16,9 @@ metadata/_custom_type_script = "uid://crrmp2hsdb52s"
 [node name="player" parent="." instance=ExtResource("1_6e51n")]
 position = Vector2(572, 291)
 player_stats = SubResource("Resource_sqeqr")
+
+[node name="enemy" parent="." instance=ExtResource("3_sqeqr")]
+position = Vector2(951, 292)
+
+[node name="Node2D" parent="." instance=ExtResource("4_jwygn")]
+position = Vector2(234, 331)
