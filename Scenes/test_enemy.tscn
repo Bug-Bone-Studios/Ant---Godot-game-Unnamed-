@@ -50,3 +50,5 @@ offset_top = -12.0
 offset_right = 48.0
 offset_bottom = 20.0
 health_component = NodePath("../HealthComponent")
+
+[node name="components" type="Node" parent="."]

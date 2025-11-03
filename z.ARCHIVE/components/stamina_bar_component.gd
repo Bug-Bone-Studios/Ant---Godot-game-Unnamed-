@@ -1,5 +1,5 @@
 extends ProgressBar
-class_name StaminaBar
+#class_name StaminaBar
 
 @onready var stamina_bar: StaminaBar = $"."
 var stats = null
