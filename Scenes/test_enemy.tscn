@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmvuqrji8vlqk"]
+
+[ext_resource type="Texture2D" uid="uid://1a4k15h1hp0s" path="res://Assets/itch.io/32rogues/rogues.png" id="1_62lc6"]
+[ext_resource type="Script" uid="uid://cthymss0v2m8r" path="res://Scripts/test_enemy.gd" id="1_nxrrk"]
+[ext_resource type="PackedScene" uid="uid://dqppf8huq4f2g" path="res://Scenes/Components/HealthComponent.tscn" id="2_nxrrk"]
+[ext_resource type="PackedScene" uid="uid://detuydqv72ys7" path="res://Scenes/Components/HitboxComponent.tscn" id="3_gnuit"]
+[ext_resource type="PackedScene" uid="uid://dpnl48lavdowy" path="res://Scenes/test_sword.tscn" id="5_gnuit"]
+[ext_resource type="PackedScene" uid="uid://bp0ytwp4cnih1" path="res://Scenes/Components/HealthBarComponent.tscn" id="6_crle4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crle4"]
+size = Vector2(75, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwy5j"]
+atlas = ExtResource("1_62lc6")
+region = Rect2(130.65182, 31.844177, 28.122574, 31.71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_was6l"]
+size = Vector2(32, 66.5)
+
+[node name="test_enemy" type="CharacterBody2D"]
+script = ExtResource("1_nxrrk")
+
+[node name="enemy_collider" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 4)
+shape = SubResource("RectangleShape2D_crle4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_mwy5j")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_nxrrk")]
+position = Vector2(-258, -117)
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_gnuit")]
+position = Vector2(-236, -83)
+health_component = NodePath("../HealthComponent")
+
+[node name="hurt_box" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(223, 83)
+shape = SubResource("RectangleShape2D_was6l")
+debug_color = Color(0.9409436, 0.13380575, 0.5131118, 0.41960785)
+
+[node name="test_sword" parent="." instance=ExtResource("5_gnuit")]
+position = Vector2(-45, 3)
+
+[node name="HealthBarComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_crle4")]
+offset_left = 44.0
+offset_top = -12.0
+offset_right = 48.0
+offset_bottom = 20.0
+health_component = NodePath("../HealthComponent")

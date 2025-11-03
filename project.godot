@@ -18,11 +18,11 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
-"res://REWORK/": "purple",
-"res://components/": "blue",
-"res://resource files/": "orange",
-"res://scenes/": "yellow",
-"res://scripts/": "green"
+"res://z.ARCHIVE/": "red",
+"res://z.ARCHIVE/components/": "blue",
+"res://z.ARCHIVE/resource files/": "orange",
+"res://z.ARCHIVE/scenes/": "yellow",
+"res://z.ARCHIVE/scripts/": "green"
 }
 
 [global_group]

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Entities" load_steps=2 format=3 uid="uid://bma06w5e4o3pa"]
+
+[ext_resource type="Script" uid="uid://dtvv2x6snfvxi" path="res://z.ARCHIVE/resource files/ent - tiddies/scripts/entities.gd" id="1_6tenp"]
+
+[resource]
+script = ExtResource("1_6tenp")
+metadata/_custom_type_script = "uid://dtvv2x6snfvxi"

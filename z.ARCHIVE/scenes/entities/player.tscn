@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://bewps0p6srdrx"]
+
+[ext_resource type="Script" uid="uid://b05ho7v4mepuu" path="res://z.ARCHIVE/scripts/entities/player.gd" id="1_08t41"]
+[ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_ucweq"]
+[ext_resource type="Script" uid="uid://dtvv2x6snfvxi" path="res://z.ARCHIVE/resource files/ent - tiddies/scripts/entities.gd" id="2_42nxq"]
+[ext_resource type="PackedScene" uid="uid://hm5kr5gbcrg" path="res://z.ARCHIVE/components/health_bar_component.tscn" id="4_42nxq"]
+[ext_resource type="PackedScene" uid="uid://q2j14ugncflj" path="res://z.ARCHIVE/components/stamina_bar_component.tscn" id="5_5u6hq"]
+[ext_resource type="PackedScene" uid="uid://cb4mlqbl65xdd" path="res://z.ARCHIVE/scenes/weapons/sword_1.tscn" id="6_ss7kx"]
+[ext_resource type="PackedScene" uid="uid://d7rmk2hpn0ab" path="res://z.ARCHIVE/scenes/weapons/mace.tscn" id="7_ss7kx"]
+
+[sub_resource type="Resource" id="Resource_5u6hq"]
+script = ExtResource("2_42nxq")
+metadata/_custom_type_script = "uid://dtvv2x6snfvxi"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u6hq"]
+size = Vector2(132, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
+size = Vector2(128, 128)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_08t41")
+player_stats = SubResource("Resource_5u6hq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5u6hq")
+debug_color = Color(0.9214042, 0.14670387, 0.59244335, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_08t41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ucweq")
+
+[node name="stamina_bar_component" parent="." instance=ExtResource("5_5u6hq")]
+offset_left = -63.0
+offset_top = 90.0
+offset_right = 63.0
+offset_bottom = 113.0
+
+[node name="stamina_regen_timer" type="Timer" parent="stamina_bar_component"]
+wait_time = 0.5
+one_shot = true
+
+[node name="health_bar_component" parent="." instance=ExtResource("4_42nxq")]
+offset_left = -63.0
+offset_top = 66.0
+offset_right = 63.0
+offset_bottom = 89.0
+
+[node name="sword_1" parent="." instance=ExtResource("6_ss7kx")]
+z_index = 1
+position = Vector2(68, 15.000002)
+rotation = -4.7577677
+
+[node name="mace" parent="." instance=ExtResource("7_ss7kx")]
+position = Vector2(-89, -21)
+
+[connection signal="timeout" from="stamina_bar_component/stamina_regen_timer" to="." method="_on_stamina_regen_timer_timeout"]

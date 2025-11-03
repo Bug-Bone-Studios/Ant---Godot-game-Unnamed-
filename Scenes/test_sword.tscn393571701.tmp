@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpnl48lavdowy"]
+
+[ext_resource type="Script" uid="uid://c7drv0wks4ul" path="res://REWORK/Scripts/test_sword.gd" id="1_05s8i"]
+[ext_resource type="PackedScene" uid="uid://ba3ito2np7t6f" path="res://REWORK/Scenes/WeaponComponent.tscn" id="1_7ej7x"]
+[ext_resource type="Texture2D" uid="uid://m3owpy4c4fjw" path="res://REWORK/Assets/itch.io/32rogues/animals.png" id="2_05s8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhd1r"]
+atlas = ExtResource("2_05s8i")
+region = Rect2(97.51032, 239.71245, 24.866524, 13.806274)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh22c"]
+atlas = SubResource("AtlasTexture_fhd1r")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ej7x"]
+size = Vector2(69, 21)
+
+[node name="test_sword" type="Node2D"]
+script = ExtResource("1_05s8i")
+
+[node name="WeaponComponent" parent="." instance=ExtResource("1_7ej7x")]
+position = Vector2(-107, 133)
+attack_damage = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_fh22c")
+
+[node name="sword_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sword_hitbox"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_7ej7x")
+
+[connection signal="area_entered" from="sword_hitbox" to="." method="_on_sword_hitbox_area_entered"]

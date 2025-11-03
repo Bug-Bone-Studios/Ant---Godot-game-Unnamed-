@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://uxgrk651mjqd"]
+
+[ext_resource type="Script" uid="uid://boam48b4323ao" path="res://z.ARCHIVE/scripts/entities/enemy.gd" id="1_d7j71"]
+[ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="2_67neu"]
+[ext_resource type="Script" uid="uid://crrmp2hsdb52s" path="res://z.ARCHIVE/resource files/ent - tiddies/scripts/characters.gd" id="2_ktqfp"]
+[ext_resource type="PackedScene" uid="uid://hm5kr5gbcrg" path="res://z.ARCHIVE/components/health_bar_component.tscn" id="4_defa4"]
+
+[sub_resource type="Resource" id="Resource_defa4"]
+script = ExtResource("2_ktqfp")
+metadata/_custom_type_script = "uid://crrmp2hsdb52s"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67neu"]
+size = Vector2(133, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktqfp"]
+size = Vector2(128, 128)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_d7j71")
+enemy_stats = SubResource("Resource_defa4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_67neu")
+debug_color = Color(0.95972437, 0.105920754, 0.4373819, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ktqfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_67neu")
+
+[node name="health_bar_component" parent="." instance=ExtResource("4_defa4")]
+offset_left = -65.0
+offset_top = 69.0
+offset_right = 67.0
+offset_bottom = 92.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
