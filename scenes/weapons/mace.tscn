@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d7rmk2hpn0ab"]
 
-[ext_resource type="Texture2D" uid="uid://n6xjy8jjscbf" path="res://assets/itch.io/32rogues/items.png" id="1_435wj"]
+[ext_resource type="Texture2D" uid="uid://n6xjy8jjscbf" path="res://REWORK/Assets/itch.io/32rogues/items.png" id="1_435wj"]
 [ext_resource type="Script" uid="uid://chen32mcbw0ao" path="res://scripts/weapons/mace.gd" id="1_u3cag"]
 [ext_resource type="Script" uid="uid://b5kbvga2wvatg" path="res://resource files/weapons/weapon.gd" id="2_v312f"]
 
