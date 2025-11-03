@@ -21,8 +21,6 @@ texture_filter = 1
 scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_6lg7n")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
