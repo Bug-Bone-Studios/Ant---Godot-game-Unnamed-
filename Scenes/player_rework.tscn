@@ -24,6 +24,7 @@ script = ExtResource("1_67wny")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_51hoq")]
 position = Vector2(-158, -110)
+max_health = 100
 
 [node name="player_collider" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 0)
