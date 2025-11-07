@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://lwjbd5cdehj2"]
+
+[ext_resource type="Texture2D" uid="uid://c8yduyfv1v2ow" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/Computer.png" id="1_hto6m"]
+[ext_resource type="Script" uid="uid://re7y7h0lrr6a" path="res://pong/Scripts/enemy_paddle.gd" id="1_swxgg"]
+[ext_resource type="PackedScene" uid="uid://bqtct5qgonb4y" path="res://pong/Scenes/Components/BallDetectorComponent.tscn" id="3_4ygpi"]
+[ext_resource type="PackedScene" uid="uid://dk6u1xdwgbayj" path="res://pong/Scenes/Components/PaddleComponent.tscn" id="4_ycf8y"]
+
+[node name="enemy_paddle" type="CharacterBody2D"]
+script = ExtResource("1_swxgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(1, 1.0666667)
+texture = ExtResource("1_hto6m")
+
+[node name="paddle_collider" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, -64, -8, -56, -8, 56, 8, 64)
+
+[node name="BallDetectorComponent" parent="." instance=ExtResource("3_4ygpi")]
+position = Vector2(-88, -64)
+
+[node name="PaddleComponent" parent="." instance=ExtResource("4_ycf8y")]
+position = Vector2(-96, -32)
