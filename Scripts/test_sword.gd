@@ -7,5 +7,5 @@ func _ready() -> void:
 
 func _on_sword_hitbox_area_entered(area: HitboxComponent) -> void:
 	# Ensure we only deal damage if the area isn't from the same parent
-	if area.get_parent() != parent and is_in_group("enemy") or is_in_group("player"):
+	if area.get_parent() != parent:
 		$WeaponComponent.deal_damage(area)
