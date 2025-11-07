@@ -15,16 +15,6 @@ run/main_scene="uid://8vn3d3hfp7oa"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
-[file_customization]
-
-folder_colors={
-"res://z.ARCHIVE/": "red",
-"res://z.ARCHIVE/components/": "blue",
-"res://z.ARCHIVE/resource files/": "orange",
-"res://z.ARCHIVE/scenes/": "yellow",
-"res://z.ARCHIVE/scripts/": "green"
-}
-
 [global_group]
 
 player="players"
