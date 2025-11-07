@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8vn3d3hfp7oa"]
+[gd_scene load_steps=4 format=3 uid="uid://8vn3d3hfp7oa"]
 
 [ext_resource type="PackedScene" uid="uid://dmvuqrji8vlqk" path="res://main/Scenes/test_enemy.tscn" id="1_4kw6h"]
 [ext_resource type="PackedScene" uid="uid://c3ldi2a1cdlm5" path="res://main/Scenes/player_rework.tscn" id="2_tn8n3"]
+[ext_resource type="PackedScene" uid="uid://bapf6mi820evj" path="res://main/Scenes/Games/pong_game.tscn" id="3_c0bss"]
 
 [node name="world" type="Node2D"]
 
@@ -16,3 +17,10 @@ position = Vector2(147, 117)
 
 [node name="player_rework" parent="entities/players" instance=ExtResource("2_tn8n3")]
 position = Vector2(567, 297)
+
+[node name="world_objects" type="Node" parent="."]
+
+[node name="games" type="Node" parent="world_objects"]
+
+[node name="PongGame" parent="world_objects/games" instance=ExtResource("3_c0bss")]
+position = Vector2(136, 512)

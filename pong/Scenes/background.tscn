@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj6gra4vh2wi3"]
+[gd_scene load_steps=3 format=3 uid="uid://bj6gra4vh2wi3"]
 
 [ext_resource type="Texture2D" uid="uid://df8ap3wk3xdk8" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_grqd7"]
 [ext_resource type="Texture2D" uid="uid://bcxbis3xha3bd" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/ScoreBar.png" id="2_p4lsu"]
-[ext_resource type="Texture2D" uid="uid://bjrd2hr2me7ok" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/Preview.png" id="3_1lkdm"]
 
 [node name="background" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="Board" type="Sprite2D" parent="."]
-position = Vector2(576.00006, 320)
-scale = Vector2(1.59601, 1.6879121)
+position = Vector2(1152, 648)
+scale = Vector2(2.8728178, 2.8483512)
 texture = ExtResource("1_grqd7")
 
 [node name="Node" type="Node" parent="."]
@@ -25,34 +25,4 @@ rotation = -3.1415927
 scale = Vector2(1.314, -1)
 texture = ExtResource("2_p4lsu")
 
-[node name="Preview" type="Sprite2D" parent="."]
-position = Vector2(576, 1155)
-scale = Vector2(1.6, 1.556)
-texture = ExtResource("3_1lkdm")
-
 [node name="time" type="Node" parent="."]
-
-[node name="Control" type="Control" parent="time"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="time/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -19.0
-offset_right = 19.0
-offset_bottom = 23.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="time/Control/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.3882353, 1, 1)
-text = "TIME"
