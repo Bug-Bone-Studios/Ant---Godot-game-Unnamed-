@@ -9,13 +9,10 @@
 
 [node name="enemies" type="Node" parent="entities"]
 
-[node name="test_enemy" parent="entities/enemies" instance=ExtResource("1_4kw6h")]
-position = Vector2(771, 310)
-
 [node name="test_enemy2" parent="entities/enemies" instance=ExtResource("1_4kw6h")]
-position = Vector2(231, 305)
+position = Vector2(147, 117)
 
 [node name="players" type="Node" parent="entities"]
 
 [node name="player_rework" parent="entities/players" instance=ExtResource("2_tn8n3")]
-position = Vector2(572, 309)
+position = Vector2(567, 297)

@@ -17,7 +17,7 @@ region = Rect2(130.65182, 31.844177, 28.122574, 31.71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_was6l"]
 size = Vector2(32, 66.5)
 
-[node name="test_enemy" type="CharacterBody2D"]
+[node name="test_enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_nxrrk")
 
 [node name="enemy_collider" type="CollisionShape2D" parent="."]

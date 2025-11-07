@@ -35,11 +35,75 @@ Yes.
 ---
 
 ## 🔁 Core Game Loop
-1. **Spin the Slot** – Player starts a run; slot results decide the world’s layout, modifiers, and loot odds.  
-2. **Enter the World** – Fight, loot, and survive in the generated area.  
-3. **Extract or Die** – Win to earn a slot payout; failure still yields minimal progression.  
-4. **Upgrade the Slot** – Spend winnings to unlock new reels, symbols, or bias modifiers.  
-5. **Repeat** – Spin again, dive back in, risk more for bigger rewards. 
+# 🎰 Game Concept Overview
+
+## Core Idea
+A **dual-layer game** combining a **Tycoon Management Sim** and a **Roguelike** — both feeding into each other through interconnected currencies and upgrades.
+
+---
+
+## 🏢 Layer 1: Casino Tycoon (Main World)
+- Manage and upgrade a casino to generate *Clean Money* (💵).
+- Build rooms, hire staff, and improve décor to boost passive income.
+- One special machine — the **Corrupted Slot** — is playable and central to progression.
+
+### Key Features
+- Upgradable lobby generates passive income.
+- Office area acts as the player’s management hub.
+- Use Clean Money to expand the casino and unlock more systems.
+- Balance upgrades vs. corruption creeping into your business.
+
+---
+
+## 🌀 Layer 2: The Corrupted Slot (Roguelike Game)
+- A **roguelike adventure** that takes place *inside* the corrupted slot machine.
+- Each run gives the player **Corrupted Tokens** (🧿).
+- Tokens are used to buy corruption modifiers or upgrades for the slot and main world.
+
+### Key Features
+- Procedural levels and combat (or another roguelike mechanic).
+- No inventory; instead, players plug in “corruptions” bought in the casino.
+- Corruptions grant run modifiers (e.g., start with a sword, new abilities, higher difficulty, better rewards).
+
+---
+
+## 🔄 Gameplay Loop
+
+1. **Earn Clean Money**
+   - The casino generates passive income over time.
+   - Upgrades and expansions increase earnings.
+
+2. **Enter the Corrupted Slot**
+   - The player “plays” the slot (roguelike segment).
+   - Completing stages rewards *Corrupted Tokens.*
+
+3. **Fuse the Two Currencies**
+   - Spend 💵 + 🧿 together for powerful meta upgrades:
+     - *Slot Instability:* Adds harder roguelike modifiers with better rewards.
+     - *Corrupted Influence:* Boosts passive income, but may cause negative events.
+     - *New Game Slots:* Unlocks new roguelike zones.
+
+4. **Meta Progression**
+   - As corruption spreads, both worlds evolve.
+   - Visual and mechanical corruption alters the casino’s appearance and economy.
+   - The player must balance profit vs. corruption.
+
+---
+
+## 🧩 Upgrade & Progression Examples
+
+| Area | Upgrade Type | Resource Used | Effect |
+|------|---------------|---------------|--------|
+| Casino Lobby | Tycoon Upgrade | 💵 | Increases passive income |
+| Office Area | Infrastructure | 💵 + 🧿 | Unlocks new slot mods or research features |
+| Game Slot | Corruption Mod | 🧿 | Adds roguelike modifiers or unlocks new areas |
+| Desk | Management Hub | 💵 | Controls casino marketing / staff efficiency |
+| Entire Casino | Fusion Upgrade | 💵 + 🧿 | Blends corruption into casino visuals and gameplay |
+
+---
+
+## 🎭 Thematic
+
 
 ---
 

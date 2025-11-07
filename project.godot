@@ -30,6 +30,7 @@ folder_colors={
 player="players"
 weapon=""
 pickupable=""
+enemy=""
 
 [input]
 
