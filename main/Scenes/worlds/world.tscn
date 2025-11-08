@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8vn3d3hfp7oa"]
+[gd_scene load_steps=5 format=3 uid="uid://8vn3d3hfp7oa"]
 
 [ext_resource type="PackedScene" uid="uid://dmvuqrji8vlqk" path="res://main/Scenes/Players.Enemies/test_enemy.tscn" id="1_4kw6h"]
 [ext_resource type="PackedScene" uid="uid://c3ldi2a1cdlm5" path="res://main/Scenes/Players.Enemies/player_rework.tscn" id="2_tn8n3"]
 [ext_resource type="PackedScene" uid="uid://bapf6mi820evj" path="res://main/Scenes/Games/pong_game.tscn" id="3_c0bss"]
+[ext_resource type="PackedScene" uid="uid://xwcj02wqmxt5" path="res://main/Scenes/Worlds/map_elements/temp_wall.tscn" id="4_0ijf7"]
 
 [node name="world" type="Node2D"]
 
@@ -11,16 +12,57 @@
 [node name="enemies" type="Node" parent="entities"]
 
 [node name="test_enemy2" parent="entities/enemies" instance=ExtResource("1_4kw6h")]
-position = Vector2(147, 117)
+position = Vector2(1096, 112)
 
 [node name="players" type="Node" parent="entities"]
 
 [node name="player_rework" parent="entities/players" instance=ExtResource("2_tn8n3")]
 position = Vector2(567, 297)
 
-[node name="world_objects" type="Node" parent="."]
+[node name="world_map" type="Node" parent="."]
 
-[node name="games" type="Node" parent="world_objects"]
+[node name="walls" type="Node" parent="world_map"]
 
-[node name="PongGame" parent="world_objects/games" instance=ExtResource("3_c0bss")]
-position = Vector2(136, 512)
+[node name="temp_wall" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(1152, 0)
+scale = Vector2(1, 10)
+
+[node name="temp_wall2" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+scale = Vector2(1, 10)
+
+[node name="temp_wall3" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(1152, -3.637979e-12)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="temp_wall5" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(64, 1024)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="temp_wall6" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(1152, 1024)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="temp_wall7" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(2240, 1024)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="temp_wall8" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(2240, 576)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="temp_wall4" parent="world_map/walls" instance=ExtResource("4_0ijf7")]
+position = Vector2(64, 576)
+rotation = 1.5707964
+scale = Vector2(1, 17)
+
+[node name="world_objects" type="Node" parent="world_map"]
+
+[node name="games" type="Node" parent="world_map/world_objects"]
+
+[node name="PongGame" parent="world_map/world_objects/games" instance=ExtResource("3_c0bss")]
+position = Vector2(1080, 576)

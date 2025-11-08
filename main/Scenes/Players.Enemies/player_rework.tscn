@@ -32,7 +32,6 @@ shape = SubResource("RectangleShape2D_nei48")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_a0wf6")]
 visible = false
-position = Vector2(-158, -110)
 max_health = 100
 
 [node name="interactable_detector" type="Area2D" parent="." groups=["player"]]
@@ -42,16 +41,16 @@ shape = SubResource("CircleShape2D_itb3j")
 debug_color = Color(0, 0.6254753, 0.5227385, 0.41960785)
 
 [node name="StaminaBarComponet" parent="." node_paths=PackedStringArray("stamina_component") instance=ExtResource("3_n6015")]
-offset_left = 40.0
+offset_left = 56.0
 offset_top = -16.0
-offset_right = 44.0
+offset_right = 60.0
 offset_bottom = 11.0
 stamina_component = NodePath("../StaminaComponent")
 
 [node name="HealthBarComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_71o6a")]
-offset_left = 32.0
+offset_left = 48.0
 offset_top = -16.0
-offset_right = 36.0
+offset_right = 52.0
 offset_bottom = 11.0
 health_component = NodePath("../HealthComponent")
 
@@ -66,11 +65,10 @@ shape = SubResource("RectangleShape2D_fawfo")
 debug_color = Color(0.91877186, 6.728679e-05, 0.70276946, 0.41960785)
 
 [node name="test_sword" parent="." instance=ExtResource("6_lui2o")]
-position = Vector2(-33, 1)
+position = Vector2(-32, 0)
 
 [node name="StaminaComponent" parent="." instance=ExtResource("7_2f4f2")]
 visible = false
-position = Vector2(-215, -39)
 max_stamina = 100.0
 drain_per_sec = 5.0
 base_speed = 300.0
@@ -78,6 +76,6 @@ sprint_multiplier = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(2.0000029, 1.9073486e-06)
+position = Vector2(-9.536743e-07, 6.7762636e-21)
 scale = Vector2(5.2857146, 5.8125)
 texture = SubResource("AtlasTexture_67wny")
