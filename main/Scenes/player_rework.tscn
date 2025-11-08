@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3ldi2a1cdlm5"]
+
+[ext_resource type="Script" uid="uid://c6sxihcgnid78" path="res://main/Scripts/player_rework.gd" id="1_67wny"]
+[ext_resource type="PackedScene" uid="uid://dqppf8huq4f2g" path="res://main/Scenes/Components/HealthComponent.tscn" id="3_51hoq"]
+[ext_resource type="Texture2D" uid="uid://btw67rdy6wf7j" path="res://main/Assets/itch.io/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="3_d3j5r"]
+[ext_resource type="PackedScene" uid="uid://detuydqv72ys7" path="res://main/Scenes/Components/HitboxComponent.tscn" id="4_pjqet"]
+[ext_resource type="PackedScene" uid="uid://dpnl48lavdowy" path="res://main/Scenes/test_sword.tscn" id="5_fawfo"]
+[ext_resource type="PackedScene" uid="uid://bp0ytwp4cnih1" path="res://main/Scenes/Components/HealthBarComponent.tscn" id="6_nxjpb"]
+[ext_resource type="PackedScene" uid="uid://c62i7jn1jf020" path="res://main/Scenes/Components/StaminaComponent.tscn" id="7_xdii8"]
+[ext_resource type="PackedScene" uid="uid://cl455j7q01i0c" path="res://main/Scenes/Components/StaminaBarComponet.tscn" id="8_d3j5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nei48"]
+size = Vector2(57, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itb3j"]
+radius = 80.399
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fawfo"]
+size = Vector2(47, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67wny"]
+atlas = ExtResource("3_d3j5r")
+region = Rect2(16.938677, 15.96328, 14.11841, 16.102474)
+
+[node name="player_rework" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_67wny")
+
+[node name="player_collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_nei48")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_51hoq")]
+visible = false
+position = Vector2(-158, -110)
+max_health = 100
+
+[node name="interactable_detector" type="Area2D" parent="." groups=["player"]]
+
+[node name="interactable_detector_radius" type="CollisionShape2D" parent="interactable_detector"]
+shape = SubResource("CircleShape2D_itb3j")
+debug_color = Color(0, 0.6254753, 0.5227385, 0.41960785)
+
+[node name="StaminaBarComponet" parent="." node_paths=PackedStringArray("stamina_component") instance=ExtResource("8_d3j5r")]
+offset_left = 40.0
+offset_top = -16.0
+offset_right = 44.0
+offset_bottom = 11.0
+stamina_component = NodePath("../StaminaComponent")
+
+[node name="HealthBarComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_nxjpb")]
+offset_left = 32.0
+offset_top = -16.0
+offset_right = 36.0
+offset_bottom = 11.0
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_pjqet")]
+visible = false
+position = Vector2(-152, -110)
+health_component = NodePath("../HealthComponent")
+
+[node name="hurt_box" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(153.5, 109.5)
+shape = SubResource("RectangleShape2D_fawfo")
+debug_color = Color(0.91877186, 6.728679e-05, 0.70276946, 0.41960785)
+
+[node name="test_sword" parent="." instance=ExtResource("5_fawfo")]
+position = Vector2(-33, 1)
+
+[node name="StaminaComponent" parent="." instance=ExtResource("7_xdii8")]
+visible = false
+position = Vector2(-215, -39)
+max_stamina = 100.0
+drain_per_sec = 5.0
+base_speed = 300.0
+sprint_multiplier = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.0000029, 1.9073486e-06)
+scale = Vector2(5.2857146, 5.8125)
+texture = SubResource("AtlasTexture_67wny")

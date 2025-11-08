@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bapf6mi820evj"]
+
+[ext_resource type="Script" uid="uid://b0223nqsfd3wx" path="res://main/Scripts/pong_game.gd" id="1_63mpx"]
+[ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_vkrsj"]
+[ext_resource type="PackedScene" uid="uid://bnawd6t3q58dy" path="res://main/Scenes/Components/PlayableGameComponent.tscn" id="3_eghvb"]
+[ext_resource type="PackedScene" uid="uid://cmrs4hgxgcb4h" path="res://pong/Scenes/pong_world.tscn" id="4_dhsai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkrsj"]
+radius = 192.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63mpx"]
+size = Vector2(144, 128)
+
+[node name="PongGame" type="Node2D"]
+script = ExtResource("1_63mpx")
+
+[node name="player_detector" type="Area2D" parent="."]
+
+[node name="player_detector_radius" type="CollisionShape2D" parent="player_detector"]
+shape = SubResource("CircleShape2D_vkrsj")
+debug_color = Color(0, 0.63282746, 0.45071203, 0.41960785)
+
+[node name="world_collider" type="StaticBody2D" parent="."]
+
+[node name="collider_shape" type="CollisionShape2D" parent="world_collider"]
+shape = SubResource("RectangleShape2D_63mpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(1.090909, 1)
+texture = ExtResource("1_vkrsj")
+
+[node name="PlayableGameComponent" parent="." instance=ExtResource("3_eghvb")]
+visible = false
+position = Vector2(-440, -24)
+playable_scene = ExtResource("4_dhsai")
+
+[connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
+[connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj6gra4vh2wi3"]
+
+[ext_resource type="Texture2D" uid="uid://df8ap3wk3xdk8" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_grqd7"]
+[ext_resource type="Texture2D" uid="uid://bcxbis3xha3bd" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/ScoreBar.png" id="2_p4lsu"]
+
+[node name="background" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(1152, 648)
+scale = Vector2(2.8728178, 2.8483512)
+texture = ExtResource("1_grqd7")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ScoreBarLeft" type="Sprite2D" parent="Node"]
+show_behind_parent = true
+position = Vector2(223.99998, 24)
+scale = Vector2(1.3137829, 1)
+texture = ExtResource("2_p4lsu")
+
+[node name="ScoreBarRight" type="Sprite2D" parent="Node"]
+position = Vector2(928, 24)
+rotation = -3.1415927
+scale = Vector2(1.314, -1)
+texture = ExtResource("2_p4lsu")
+
+[node name="time" type="Node" parent="."]

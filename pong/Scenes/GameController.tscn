@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cts3gq8ermv6o"]
+
+[ext_resource type="Script" uid="uid://dk4bjnkr64fxr" path="res://pong/Scripts/GameController.gd" id="1_y2c2j"]
+
+[node name="GameController" type="Node2D"]
+script = ExtResource("1_y2c2j")
