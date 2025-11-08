@@ -17,7 +17,6 @@ func set_playable_game(scene: PackedScene) -> void:
 
 	# Spawn the mini-game fullscreen inside this CanvasLayer
 	game_instance = scene.instantiate()
-	game_instance.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(game_instance)
 
 func _unhandled_input(e: InputEvent) -> void:
