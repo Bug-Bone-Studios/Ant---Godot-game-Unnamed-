@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cmrs4hgxgcb4h"]
 
-[ext_resource type="PackedScene" uid="uid://bj6gra4vh2wi3" path="res://pong/Scenes/background.tscn" id="1_hmc5g"]
-[ext_resource type="PackedScene" uid="uid://cte3na1cyrv1h" path="res://pong/Scenes/player_paddle.tscn" id="2_v6tbu"]
-[ext_resource type="PackedScene" uid="uid://lwjbd5cdehj2" path="res://pong/Scenes/enemy_paddle.tscn" id="3_lxicu"]
-[ext_resource type="PackedScene" uid="uid://dsgg63o6unicc" path="res://pong/Scenes/ball.tscn" id="4_yds5g"]
-[ext_resource type="PackedScene" uid="uid://bqtct5qgonb4y" path="res://pong/Scenes/Components/BallDetectorComponent.tscn" id="5_ptb56"]
-[ext_resource type="PackedScene" uid="uid://cts3gq8ermv6o" path="res://pong/Scenes/GameController.tscn" id="6_l50c6"]
+[ext_resource type="PackedScene" uid="uid://bj6gra4vh2wi3" path="res://arcade games/pong/Scenes/background.tscn" id="1_hmc5g"]
+[ext_resource type="PackedScene" uid="uid://cte3na1cyrv1h" path="res://arcade games/pong/Scenes/player_paddle.tscn" id="2_v6tbu"]
+[ext_resource type="PackedScene" uid="uid://lwjbd5cdehj2" path="res://arcade games/pong/Scenes/enemy_paddle.tscn" id="3_lxicu"]
+[ext_resource type="PackedScene" uid="uid://dsgg63o6unicc" path="res://arcade games/pong/Scenes/ball.tscn" id="4_yds5g"]
+[ext_resource type="PackedScene" uid="uid://bqtct5qgonb4y" path="res://arcade games/pong/Scenes/Components/BallDetectorComponent.tscn" id="5_ptb56"]
+[ext_resource type="PackedScene" uid="uid://cts3gq8ermv6o" path="res://arcade games/pong/Scenes/GameController.tscn" id="6_l50c6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxicu"]
 normal = Vector2(0, 1)

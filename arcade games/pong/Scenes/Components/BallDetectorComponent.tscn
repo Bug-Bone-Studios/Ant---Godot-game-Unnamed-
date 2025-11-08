@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqtct5qgonb4y"]
 
-[ext_resource type="Script" uid="uid://ufo3gh0k07" path="res://pong/Scripts/Components/BallDetectorComponent.gd" id="1_2836b"]
+[ext_resource type="Script" uid="uid://ufo3gh0k07" path="res://arcade games/pong/Scripts/Components/BallDetectorComponent.gd" id="1_2836b"]
 
 [node name="BallDetectorComponent" type="Area2D"]
 script = ExtResource("1_2836b")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj6gra4vh2wi3"]
 
-[ext_resource type="Texture2D" uid="uid://df8ap3wk3xdk8" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_grqd7"]
-[ext_resource type="Texture2D" uid="uid://bcxbis3xha3bd" path="res://pong/Assets/simple-ping-pong-2Dgame-assets/arts/ScoreBar.png" id="2_p4lsu"]
+[ext_resource type="Texture2D" uid="uid://df8ap3wk3xdk8" path="res://arcade games/pong/Assets/simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_grqd7"]
+[ext_resource type="Texture2D" uid="uid://bcxbis3xha3bd" path="res://arcade games/pong/Assets/simple-ping-pong-2Dgame-assets/arts/ScoreBar.png" id="2_p4lsu"]
 
 [node name="background" type="Sprite2D"]
 scale = Vector2(0.5, 0.5)
