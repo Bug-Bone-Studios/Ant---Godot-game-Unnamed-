@@ -28,6 +28,7 @@ player="players"
 weapon=""
 pickupable=""
 enemy=""
+customer=""
 
 [input]
 

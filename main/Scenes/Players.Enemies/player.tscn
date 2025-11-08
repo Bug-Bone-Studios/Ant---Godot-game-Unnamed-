@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c3ldi2a1cdlm5"]
 
-[ext_resource type="Script" uid="uid://c6sxihcgnid78" path="res://main/Scripts/player.gd" id="1_x7iuo"]
+[ext_resource type="Script" uid="uid://c6sxihcgnid78" path="res://main/Scripts/Players.Enemies/player.gd" id="1_x7iuo"]
 [ext_resource type="PackedScene" uid="uid://dqppf8huq4f2g" path="res://main/Scenes/Components/HealthComponent.tscn" id="2_a0wf6"]
 [ext_resource type="PackedScene" uid="uid://cl455j7q01i0c" path="res://main/Scenes/Components/StaminaBarComponet.tscn" id="3_n6015"]
 [ext_resource type="PackedScene" uid="uid://bp0ytwp4cnih1" path="res://main/Scenes/Components/HealthBarComponent.tscn" id="4_71o6a"]
