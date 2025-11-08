@@ -35,6 +35,7 @@ visible = false
 max_health = 100
 
 [node name="interactable_detector" type="Area2D" parent="." groups=["player"]]
+visible = false
 
 [node name="interactable_detector_radius" type="CollisionShape2D" parent="interactable_detector"]
 shape = SubResource("CircleShape2D_itb3j")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmrs4hgxgcb4h" path="res://arcade games/pong/Scenes/pong_world.tscn" id="4_dhsai"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkrsj"]
-radius = 192.0
+radius = 160.19987
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63mpx"]
 size = Vector2(144, 128)
@@ -34,6 +34,14 @@ texture = ExtResource("1_vkrsj")
 visible = false
 position = Vector2(-440, -24)
 playable_scene = ExtResource("4_dhsai")
+
+[node name="game_label" type="Label" parent="."]
+visible = false
+offset_left = -144.0
+offset_top = -96.0
+offset_right = -83.0
+offset_bottom = -73.0
+text = "Play Pong"
 
 [connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
 [connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]
