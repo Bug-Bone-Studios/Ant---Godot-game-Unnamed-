@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4gjlo8pqmgrp"]
+[gd_scene load_steps=7 format=3 uid="uid://c4gjlo8pqmgrp"]
 
 [ext_resource type="Texture2D" uid="uid://1a4k15h1hp0s" path="res://main/Assets/itch.io/32rogues/rogues.png" id="1_2vexx"]
 [ext_resource type="Script" uid="uid://g1qhhyt1lnpv" path="res://main/Scripts/Players.Enemies/customer.gd" id="1_wg64h"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_26rrt"]
-radius = 64.0
+[ext_resource type="PackedScene" uid="uid://xse537ifw1b7" path="res://main/Scenes/Components/PlayerDetectorComponent.tscn" id="3_26rrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg64h"]
 size = Vector2(64, 80)
@@ -13,14 +11,11 @@ size = Vector2(64, 80)
 atlas = ExtResource("1_2vexx")
 region = Rect2(6.322754, 192.75435, 20.274986, 31.245651)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxu64"]
+radius = 64.0
+
 [node name="customer" type="CharacterBody2D"]
 script = ExtResource("1_wg64h")
-
-[node name="player_detector" type="Area2D" parent="." groups=["customer"]]
-
-[node name="player_detector_radius" type="CollisionShape2D" parent="player_detector"]
-shape = SubResource("CircleShape2D_26rrt")
-debug_color = Color(8.663535e-07, 0.6386381, 0.38024315, 0.41960785)
 
 [node name="world_collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wg64h")
@@ -39,5 +34,9 @@ offset_right = -51.0
 offset_bottom = -17.0
 text = "Hello!"
 
-[connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
-[connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]
+[node name="PlayerDetector" parent="." instance=ExtResource("3_26rrt")]
+position = Vector2(-48, 0)
+
+[node name="player_detector_radius" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(48, 0)
+shape = SubResource("CircleShape2D_jxu64")

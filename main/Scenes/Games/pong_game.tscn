@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bapf6mi820evj"]
+[gd_scene load_steps=8 format=3 uid="uid://bapf6mi820evj"]
 
 [ext_resource type="Script" uid="uid://b0223nqsfd3wx" path="res://main/Scripts/pong_game.gd" id="1_63mpx"]
 [ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_vkrsj"]
+[ext_resource type="Script" uid="uid://blo18avpeijr7" path="res://main/Scripts/Components/PlayerDetectorComponent.gd" id="2_xs2ef"]
 [ext_resource type="PackedScene" uid="uid://bnawd6t3q58dy" path="res://main/Scenes/Components/PlayableGameComponent.tscn" id="3_eghvb"]
 [ext_resource type="PackedScene" uid="uid://cmrs4hgxgcb4h" path="res://arcade games/pong/Scenes/pong_world.tscn" id="4_dhsai"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vkrsj"]
-radius = 160.19987
+[sub_resource type="CircleShape2D" id="CircleShape2D_5d0kg"]
+radius = 144.22205
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63mpx"]
 size = Vector2(144, 128)
@@ -14,11 +15,13 @@ size = Vector2(144, 128)
 [node name="PongGame" type="Node2D"]
 script = ExtResource("1_63mpx")
 
-[node name="player_detector" type="Area2D" parent="."]
+[node name="PlayerDetector" type="Area2D" parent="."]
+script = ExtResource("2_xs2ef")
+metadata/_custom_type_script = "uid://blo18avpeijr7"
 
-[node name="player_detector_radius" type="CollisionShape2D" parent="player_detector"]
-shape = SubResource("CircleShape2D_vkrsj")
-debug_color = Color(0, 0.63282746, 0.45071203, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_5d0kg")
+debug_color = Color(0, 0.63131934, 0.46674365, 0.41960785)
 
 [node name="world_collider" type="StaticBody2D" parent="."]
 
@@ -42,6 +45,3 @@ offset_top = -96.0
 offset_right = -83.0
 offset_bottom = -73.0
 text = "Play Pong"
-
-[connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
-[connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]

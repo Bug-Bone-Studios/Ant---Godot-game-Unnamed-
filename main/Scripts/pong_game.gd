@@ -3,19 +3,23 @@ class_name PongGame
 
 @onready var playable_comp := $PlayableGameComponent
 @onready var game_label := $game_label
+@onready var player_detector: PlayerDetector = $PlayerDetector
+@export var debug_mode:bool = false
 
-var player_nearby := false
+func _ready() -> void:
+	game_label.hide()
 
-func _on_player_detector_area_entered(a: Area2D) -> void:
-	if a.is_in_group("player"):
-		player_nearby = true
-		game_label.show()
+	if player_detector == null:
+		push_warning("PlayerDetector is not assigned at $PlayerDetector")
+		return
+	elif debug_mode:
+		print("PlayerDetector is assigned to pong_game")
 
-func _on_player_detector_area_exited(a: Area2D) -> void:
-	if a.is_in_group("player"):
-		player_nearby = false
-		game_label.hide()
+	player_detector.player_presence_changed.connect(_on_presence_changed)
 
-func _process(_d: float) -> void:
-	if player_nearby and Input.is_action_just_pressed("interact"):
+func _on_presence_changed(nearby: bool) -> void:
+	game_label.visible = nearby
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and player_detector != null and player_detector.player_nearby:
 		playable_comp.interact()
