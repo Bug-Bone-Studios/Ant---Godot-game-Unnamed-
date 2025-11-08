@@ -79,3 +79,5 @@ texture_filter = 1
 position = Vector2(-9.536743e-07, 6.7762636e-21)
 scale = Vector2(5.2857146, 5.8125)
 texture = SubResource("AtlasTexture_67wny")
+
+[node name="Camera2D" type="Camera2D" parent="."]
