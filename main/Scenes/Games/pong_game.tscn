@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0223nqsfd3wx" path="res://main/Scripts/pong_game.gd" id="1_63mpx"]
 [ext_resource type="Texture2D" uid="uid://bdbl6yjs7ctjk" path="res://icon.svg" id="1_vkrsj"]
-[ext_resource type="Script" uid="uid://blo18avpeijr7" path="res://main/Scripts/Components/PlayerDetectorComponent.gd" id="2_xs2ef"]
+[ext_resource type="Script" uid="uid://blo18avpeijr7" path="res://main/Scripts/Components/PlayerDetector.gd" id="2_xs2ef"]
 [ext_resource type="PackedScene" uid="uid://bnawd6t3q58dy" path="res://main/Scenes/Components/PlayableGameComponent.tscn" id="3_eghvb"]
 [ext_resource type="PackedScene" uid="uid://cmrs4hgxgcb4h" path="res://arcade games/pong/Scenes/pong_world.tscn" id="4_dhsai"]
 

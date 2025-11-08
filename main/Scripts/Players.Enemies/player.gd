@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
+
 @onready var stamina_component: StaminaComponent = $StaminaComponent
 @export var enable_movement: bool = true
 
 func _physics_process(_delta: float) -> void:
-	# Only handle movement if movement is enabled
 	if enable_movement:
 		playerMovement(_delta)
 
@@ -19,6 +19,4 @@ func playerMovement(_delta: float) -> void:
 	if inputVector != Vector2.ZERO:
 		inputVector = inputVector.normalized()
 
-
-	# Use move_and_slide for smooth top-down character movement
 	move_and_slide()

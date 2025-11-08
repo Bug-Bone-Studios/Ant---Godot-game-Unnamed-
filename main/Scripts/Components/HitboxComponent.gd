@@ -1,6 +1,8 @@
 extends Area2D
 class_name HitboxComponent
 
+@export var debug_mode:bool = false
+
 # Connects to a HealthComponent to handle damage when hit.
 @export var health_component : HealthComponent  # Reference to the associated HealthComponent.
 
@@ -8,10 +10,13 @@ class_name HitboxComponent
 func _ready():
 	if not health_component:
 		print("Warning: HealthComponent is not assigned to HitboxComponent. Damage will not be processed on ", get_parent().name)
+	elif debug_mode:
+		print("HealthComponent is assigned to HitboxComponent. Damage will be processed on ", get_parent().name)
 
 # Applies damage from an AttackComponent, passing it to the HealthComponent if valid.
 func damage(attack: AttackComponent):
-	print("Detecting damage on HitboxComponent: ", get_parent().name)
+	if debug_mode:
+		print("Detecting damage on HitboxComponent: ", get_parent().name)
 	if health_component:
 		health_component.damage(attack)
 	else:

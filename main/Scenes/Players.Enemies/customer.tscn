@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1a4k15h1hp0s" path="res://main/Assets/itch.io/32rogues/rogues.png" id="1_2vexx"]
 [ext_resource type="Script" uid="uid://g1qhhyt1lnpv" path="res://main/Scripts/Players.Enemies/customer.gd" id="1_wg64h"]
-[ext_resource type="PackedScene" uid="uid://xse537ifw1b7" path="res://main/Scenes/Components/PlayerDetectorComponent.tscn" id="3_26rrt"]
+[ext_resource type="PackedScene" uid="uid://xse537ifw1b7" path="res://main/Scenes/Components/PlayerDetector.tscn" id="3_26rrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg64h"]
 size = Vector2(64, 80)

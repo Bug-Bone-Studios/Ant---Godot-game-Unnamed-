@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://xse537ifw1b7"]
-
-[ext_resource type="Script" uid="uid://blo18avpeijr7" path="res://main/Scripts/Components/PlayerDetectorComponent.gd" id="1_3ygay"]
-
-[node name="PlayerDetectorComponent" type="Area2D"]
-script = ExtResource("1_3ygay")
