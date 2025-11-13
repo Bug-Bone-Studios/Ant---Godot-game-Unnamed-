@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq60ybk2o5d7d"]
+
+[ext_resource type="Script" uid="uid://dnuxutnvhdova" path="res://main/Scripts/UI/playable_overlay.gd" id="1_qqpbd"]
+
+[node name="playable_overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qqpbd")

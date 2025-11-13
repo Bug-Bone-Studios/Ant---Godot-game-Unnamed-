@@ -2,5 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dnuxutnvhdova" path="res://main/Scripts/UI/playable_overlay.gd" id="1_qqpbd"]
 
-[node name="playable_overlay" type="CanvasLayer"]
+[node name="playable_overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_qqpbd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.21568628)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+physics_object_picking = true
+size_2d_override_stretch = true
+render_target_update_mode = 4

@@ -35,7 +35,6 @@ texture = ExtResource("1_vkrsj")
 
 [node name="PlayableGameComponent" parent="." instance=ExtResource("3_eghvb")]
 visible = false
-position = Vector2(-440, -24)
 playable_scene = ExtResource("4_dhsai")
 
 [node name="game_label" type="Label" parent="."]

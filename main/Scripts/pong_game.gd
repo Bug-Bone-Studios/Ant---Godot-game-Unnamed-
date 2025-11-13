@@ -4,6 +4,7 @@ class_name PongGame
 @onready var playable_comp := $PlayableGameComponent
 @onready var game_label := $game_label
 @onready var player_detector: PlayerDetector = $PlayerDetector
+
 @export var debug_mode:bool = false
 
 func _ready() -> void:
@@ -20,6 +21,9 @@ func _ready() -> void:
 func _on_presence_changed(nearby: bool) -> void:
 	game_label.visible = nearby
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and player_detector != null and player_detector.player_nearby:
+func _process(_delta: float) -> void:
+	if player_detector != null \
+		and player_detector.player_nearby \
+		and Input.is_action_just_pressed("interact"):
+		print("PongGame: interact pressed, calling playable_comp.interact()")
 		playable_comp.interact()
